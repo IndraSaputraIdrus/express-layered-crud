@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon .",
-    "start": "node ."
+    "start": "node .",
+    "vercel-build": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "5.1.1",

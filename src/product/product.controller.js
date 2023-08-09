@@ -46,7 +46,7 @@ router.post("/", async (req, res) => {
       throw Error("Some field are missing");
     }
     const product = await createProduct(newProductData);
-    res.status(201).send({ message: "crated", data: product });
+    res.status(201).send({ message: "created", data: product });
   } catch (error) {
     res.status(400).send({ error: error.message });
   }
