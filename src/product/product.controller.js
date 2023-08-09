@@ -24,7 +24,7 @@ router.get("/", async (_, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const productId = parseInt(req.params.id);
+    const productId = req.params.id;
     const product = await getProductById(productId);
     res.send(product);
   } catch (error) {
@@ -54,7 +54,7 @@ router.post("/", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    const productId = parseInt(req.params.id);
+    const productId = req.params.id;
     await deleteProductById(productId);
     res.send({ message: "Product deleted" });
   } catch (error) {
@@ -64,7 +64,7 @@ router.delete("/:id", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   try {
-    const productId = parseInt(req.params.id);
+    const productId = req.params.id;
     const productData = req.body;
     console.log(productData);
 
@@ -92,7 +92,7 @@ router.put("/:id", async (req, res) => {
 
 router.patch("/:id", async (req, res) => {
   try {
-    const productId = parseInt(req.params.id);
+    const productId = req.params.id;
     const productData = req.body;
     const product = await editProductById(productId, productData);
     res.send({

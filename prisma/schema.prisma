@@ -3,14 +3,14 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model Product {
-  id          Int    @id @default(autoincrement())
-  name        String @db.VarChar(255)
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  name        String 
   price       Int
-  description String @db.VarChar(255)
-  image       String @db.VarChar(255)
+  description String 
+  image       String
 }
